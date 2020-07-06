@@ -10,10 +10,15 @@ def deleteRow(dataFrame,rowName):
 file = "./testFiles/LD4__2020.01.15"
 df = pd.read_csv(file,header=[0,1],sep='\t')
 
-deleteRow(df,'Test')
+deleteRow(df,'Time')
+deleteRow(df,'2X Phase')
+deleteRow(df,'Speed')
+deleteRow(df,'2X Amp')
+deleteRow(df,'Overall')
+deleteRow(df,'DC Gap')
 
 df.columns = df.columns.map('_'.join)
 print(df.columns)
 
-# fig = px.line(df)
-# fig.show()
+fig = px.line(df)
+fig.show()
